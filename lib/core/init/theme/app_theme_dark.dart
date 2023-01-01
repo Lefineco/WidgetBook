@@ -14,13 +14,25 @@ class AppThemeDark extends AppTheme with IDarkTheme {
 
   ThemeData get darkTheme => ThemeData.dark().copyWith(
       textTheme: textTheme(),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: Colors.black,
+        hintStyle: textThemeDark.headline6.copyWith(color: colorSchemeDark.baseBlack),
+        labelStyle: textThemeDark.headline6.copyWith(color: colorSchemeDark.baseBlack, fontWeight: FontWeight.w400),
+        helperStyle: textThemeDark.subtitle2.copyWith(color: colorSchemeDark.baseDarkGrey),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
       elevatedButtonTheme: elevatedButton(),
-      iconTheme: IconThemeData(color: colorSchemeDark.baseWhite),
+      iconTheme: _iconThemeData(),
       checkboxTheme: CheckboxThemeData(
         checkColor: MaterialStatePropertyAll(colorSchemeDark.baseWhite),
         fillColor: MaterialStatePropertyAll(colorSchemeDark.baseBlack),
       ),
       colorScheme: _appColorScheme());
+
+  IconThemeData _iconThemeData() => IconThemeData(color: colorSchemeDark.baseWhite);
 
   ElevatedButtonThemeData elevatedButton() {
     return ElevatedButtonThemeData(
