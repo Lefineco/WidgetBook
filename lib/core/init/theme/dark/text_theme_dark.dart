@@ -21,6 +21,7 @@ class TextThemeDark {
   final TextStyle headline5 = const TextStyle(fontFamily: ApplicationConstants.FONT_FAMILY, fontWeight: FontWeight.w600, fontSize: 24);
   final TextStyle headline6 = const TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16);
   final TextStyle subtitle2 = TextStyle(fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.5);
+  final TextStyle subtitle1 = TextStyle(fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.5);
 
 /*   
   final subtitle1 = GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 0.15);

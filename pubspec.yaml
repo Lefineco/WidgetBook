@@ -9,9 +9,13 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  # STORY BOOK
   widgetbook: ^2.4.1
+  # CONTEXT EXTENSION
   kartal: ^2.7.0
+  # STATE MANAGEMENT
   flutter_riverpod: ^2.1.3
+  # CACHE
   shared_preferences: ^2.0.15
 
 dev_dependencies:

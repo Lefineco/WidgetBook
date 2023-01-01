@@ -14,12 +14,25 @@ class AppThemeDark extends AppTheme with IDarkTheme {
 
   ThemeData get darkTheme => ThemeData.dark().copyWith(
       textTheme: textTheme(),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: colorSchemeDark.baseBlack,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStatePropertyAll(
+          colorSchemeDark.baseWhite,
+        ),
+      ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: Colors.black,
-        hintStyle: textThemeDark.headline6.copyWith(color: colorSchemeDark.baseBlack),
-        labelStyle: textThemeDark.headline6.copyWith(color: colorSchemeDark.baseBlack, fontWeight: FontWeight.w400),
-        helperStyle: textThemeDark.subtitle2.copyWith(color: colorSchemeDark.baseDarkGrey),
+        hintStyle: textThemeDark.headline6.copyWith(color: colorSchemeDark.baseWhite),
+        labelStyle: textThemeDark.headline6.copyWith(color: colorSchemeDark.baseWhite, fontWeight: FontWeight.w400),
+        helperStyle: textThemeDark.subtitle2.copyWith(
+          color: colorSchemeDark.baseDarkGrey,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -55,6 +68,8 @@ class AppThemeDark extends AppTheme with IDarkTheme {
       headline3: textThemeDark.headline3,
       headline4: textThemeDark.headline4,
       headline5: textThemeDark.headline5,
+      subtitle2: textThemeDark.subtitle2.copyWith(color: Colors.white),
+      subtitle1: textThemeDark.subtitle1.copyWith(color: Colors.white),
       headline6: textThemeDark.headline6,
     );
   }
