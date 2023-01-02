@@ -7,6 +7,7 @@ class CustomTextFormField extends StatelessWidget {
     String? hintText,
     Widget? prefixIcon,
     Widget? suffixIcon,
+    String? helperText,
     bool isObscureText = false,
     String? Function(String?)? validator,
     TextEditingController? controller,
@@ -14,6 +15,7 @@ class CustomTextFormField extends StatelessWidget {
         _hintText = hintText,
         _prefixIcon = prefixIcon,
         _suffixIcon = suffixIcon,
+        _helperText = helperText,
         _validator = validator,
         _isObscureText = isObscureText,
         _passwordConfirmController = controller,
@@ -25,6 +27,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? _hintText;
   final Widget? _prefixIcon;
   final Widget? _suffixIcon;
+  final String? _helperText;
   final bool _isObscureText;
   final String? Function(String?)? _validator;
 
@@ -36,6 +39,7 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: _isObscureText,
       decoration: InputDecoration(
         labelText: _labelText,
+        helperText: _helperText,
         hintText: _hintText,
         prefixIcon: _prefixIcon,
         suffixIcon: _suffixIcon,

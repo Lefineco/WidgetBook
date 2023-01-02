@@ -7,8 +7,10 @@ class BaseFormInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: TextFormField(
+        textAlign: TextAlign.center,
         decoration: InputDecoration(
           labelText: "Label",
+          hintText: "Content",
           helperText: "Help Text",
         ),
       ),
