@@ -13,6 +13,7 @@ class _BaseRadioButtonState extends State<BaseRadioButton> {
   Widget build(BuildContext context) {
     return Center(
       child: RadioListTile(
+        toggleable: true,
         value: _radioValue,
         groupValue: false,
         title: Text(

@@ -20,7 +20,10 @@ class TextThemeLight {
     fontWeight: FontWeight.w400,
     letterSpacing: 0.15,
   );
-  final TextStyle subtitle2 = TextStyle(fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.5);
+  final TextStyle subtitle2 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+  );
 
 /*   
   final subtitle1 = GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 0.15);

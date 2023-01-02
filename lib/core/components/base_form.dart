@@ -55,7 +55,10 @@ class _BaseFormState extends State<BaseForm> {
                 value: _value,
                 contentPadding: EdgeInsets.zero,
                 controlAffinity: ListTileControlAffinity.leading,
-                title: Text('Label'),
+                title: Text(
+                  'Label',
+                  style: Theme.of(context).textTheme.headline6?.copyWith(color: Colors.black, fontWeight: FontWeight.w600),
+                ),
                 onChanged: (bool? value) => setState(() => _value = value ?? false),
               ),
               context.emptySizedWidthBoxLow3x,
