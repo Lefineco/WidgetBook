@@ -7,7 +7,7 @@ import '../theme/app_theme_light.dart';
 
 class ThemeNotifier extends StateNotifier<ThemeData> {
   ThemeMode _mode;
-  ThemeNotifier({ThemeMode mode = ThemeMode.dark})
+  ThemeNotifier({ThemeMode mode = ThemeMode.light})
       : _mode = mode,
         super(AppThemeLight.instance.theme) {
     getTheme();

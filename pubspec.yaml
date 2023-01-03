@@ -11,20 +11,37 @@ dependencies:
   cupertino_icons: ^1.0.2
   # STORY BOOK
   widgetbook: ^2.4.1
-  # CONTEXT EXTENSION
+  # CONTEXT
   kartal: ^2.7.0
   # STATE MANAGEMENT
   flutter_riverpod: ^2.1.3
   # CACHE
   shared_preferences: ^2.0.15
+  # SVG
   flutter_svg: ^1.1.6
+  # RESPONSIVE
+  responsive_builder: ^0.4.3
+  # LOCALIZATION
+  easy_localization: ^3.0.0
+  very_good_analysis: ^3.1.0
+
+flutter_gen:
+  output: lib/gen/ # Optional (default: lib/gen/)
+  line_length: 80 # Optional (default: 80)
+
+  # Optional
+  integrations:
+    flutter_svg: true
+    flare_flutter: true
+    rive: false
+    lottie: true
 
 dev_dependencies:
   integration_test:
   flutter_test:
     sdk: flutter
-
-  flutter_lints: ^2.0.0
+  build_runner:
+  flutter_gen_runner:
 
 flutter:
   uses-material-design: true

@@ -12,18 +12,21 @@ class BaseToggleSwitch extends ConsumerStatefulWidget {
 }
 
 class _BaseToggleSwitchState extends ConsumerState<BaseToggleSwitch> {
-  void toggleTheme(WidgetRef ref) {
+  void toggleTheme(
+    WidgetRef ref,
+  ) {
     ref.read(themeNotifierProvider.notifier).toggleTheme();
   }
 
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: CupertinoSwitch(
-      value: ref.watch(themeNotifierProvider.notifier).mode == ThemeMode.dark,
-      onChanged: (bool? val) {
-        toggleTheme(ref);
-      },
-    ));
+      child: CupertinoSwitch(
+        value: ref.watch(themeNotifierProvider.notifier).mode == ThemeMode.light,
+        onChanged: (bool? val) => toggleTheme(
+          ref,
+        ),
+      ),
+    );
   }
 }
