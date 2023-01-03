@@ -9,11 +9,15 @@ class BaseButton extends StatelessWidget {
     return Center(
       child: ElevatedButton.icon(
         icon: const Icon(
-          color: Colors.white,
           CupertinoIcons.add,
+          size: 16,
+          color: Colors.white,
         ),
         onPressed: () {},
-        label: Text(textAlign: TextAlign.center, 'Label', style: Theme.of(context).textTheme.headline6),
+        label: Text(
+            textAlign: TextAlign.center,
+            'Label',
+            style: Theme.of(context).textTheme.button?.copyWith(color: Colors.white, fontWeight: FontWeight.w400)),
       ),
     );
   }

@@ -13,4 +13,5 @@ class ColorSchemeDark {
   final Color baseBlack = const Color(0xff000000);
   final Color baseDarkGrey = const Color(0xff777777);
   final Color baseFormFillColor = Color(0xffF6F6F6);
+  final Color baseTransparentColor = Colors.transparent;
 }

@@ -4,8 +4,8 @@ import 'package:kartal/kartal.dart';
 import '../../gen/assets.gen.dart';
 import '../init/theme/dark/dark_theme_interface.dart';
 
-class BaseCheckBox extends StatefulWidget {
-  const BaseCheckBox({
+class BaseCheckBoxListTile extends StatefulWidget {
+  const BaseCheckBoxListTile({
     Key? key,
     this.width = 24.0,
     this.height = 24.0,
@@ -13,6 +13,7 @@ class BaseCheckBox extends StatefulWidget {
     this.iconSize,
     this.onChanged,
     this.checkColor,
+    this.title,
   }) : super(key: key);
 
   final double width;
@@ -21,12 +22,13 @@ class BaseCheckBox extends StatefulWidget {
   final double? iconSize;
   final Color? checkColor;
   final VoidCallback Function(bool?)? onChanged;
+  final Widget? title;
 
   @override
-  State<BaseCheckBox> createState() => _BaseCheckBoxState();
+  State<BaseCheckBoxListTile> createState() => _BaseCheckBoxListTileState();
 }
 
-class _BaseCheckBoxState extends State<BaseCheckBox> with IDarkTheme {
+class _BaseCheckBoxListTileState extends State<BaseCheckBoxListTile> with IDarkTheme {
   bool _isChecked = false;
 
   @override

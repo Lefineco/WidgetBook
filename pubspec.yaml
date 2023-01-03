@@ -31,6 +31,8 @@ dependencies:
 flutter_gen:
   output: lib/gen/ # Optional (default: lib/gen/)
   line_length: 80 # Optional (default: 80)
+  fonts:
+    enabled: true
 
   # Optional
   integrations:
@@ -49,22 +51,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/png/
     - assets/images/svg/
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware
-
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
   fonts:
     - family: Manrope
       fonts:
@@ -75,6 +65,3 @@ flutter:
         - asset: assets/fonts/Manrope-Medium.ttf
         - asset: assets/fonts/Manrope-Regular.ttf
         - asset: assets/fonts/Manrope-SemiBold.ttf
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages

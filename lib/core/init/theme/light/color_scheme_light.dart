@@ -11,10 +11,10 @@ class ColorSchemeLight {
 
   final Color baseText = const Color(0xffFFFFFF);
   final Color baseBlack = const Color(0xff000000);
-
   final Color baseGrey = const Color(0xffE1E1E1);
   final Color baseDarkGrey = const Color(0xff777777);
   final Color baseFormFillColor = Color(0xffF6F6F6);
-
   final Color baseWhite = const Color(0xffECECEC);
+  final Color baseScaffoldColor = Color.fromARGB(255, 255, 255, 255);
+  final Color baseTransparentColor = Colors.transparent;
 }

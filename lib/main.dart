@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kartal/kartal.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 import 'core/components/base_checkbox.dart';
@@ -31,7 +32,7 @@ class _MyAppState extends ConsumerState<MyApp> {
     return Widgetbook.material(
       categories: [
         WidgetbookCategory(
-          name: 'widgets',
+          name: 'Components',
           widgets: [
             WidgetbookComponent(
               name: 'Button',
@@ -58,11 +59,16 @@ class _MyAppState extends ConsumerState<MyApp> {
                 ),
                 WidgetbookUseCase(
                   name: 'Chip',
-                  builder: (context) => const BaseChip(),
+                  builder: (context) => BaseChip(),
                 ),
                 WidgetbookUseCase(
                   name: 'Text Input',
-                  builder: (context) => const BaseFormInput(),
+                  builder: (context) => Padding(
+                    padding: context.horizontalPaddingNormal,
+                    child: BaseFormInput(
+                      label: 'label',
+                    ),
+                  ),
                 ),
                 WidgetbookUseCase(
                   name: 'Circle Avatar',
@@ -70,7 +76,10 @@ class _MyAppState extends ConsumerState<MyApp> {
                 ),
                 WidgetbookUseCase(
                   name: 'Base Text Area',
-                  builder: (context) => const BaseTextArea(),
+                  builder: (context) => Padding(
+                    padding: context.horizontalPaddingNormal,
+                    child: const BaseTextArea(),
+                  ),
                 ),
                 WidgetbookUseCase(
                   name: 'Base Form',

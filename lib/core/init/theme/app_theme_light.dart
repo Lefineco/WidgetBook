@@ -47,7 +47,7 @@ class AppThemeLight extends AppTheme with ILightTheme {
         ),
       ),
       colorScheme: _appColorScheme().copyWith(),
-      scaffoldBackgroundColor: colorSchemeLight.baseWhite,
+      scaffoldBackgroundColor: colorSchemeLight.baseScaffoldColor,
       elevatedButtonTheme: elevatedButton());
 
   ChipThemeData chipThemeData() {
@@ -66,7 +66,10 @@ class AppThemeLight extends AppTheme with ILightTheme {
   ElevatedButtonThemeData elevatedButton() {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
+        animationDuration: Duration(milliseconds: 1000),
+        splashFactory: InkRipple.splashFactory,
         backgroundColor: colorSchemeLight.baseBlack,
+        foregroundColor: colorSchemeLight.baseWhite,
         padding: const EdgeInsets.only(bottom: 20, left: 25, right: 20, top: 25),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         minimumSize: Size(144, 56),
@@ -80,13 +83,15 @@ class AppThemeLight extends AppTheme with ILightTheme {
 
   TextTheme textTheme() {
     return TextTheme(
-        headline1: textThemeLight.headline1,
-        headline2: textThemeLight.headline2,
-        headline3: textThemeLight.headline3,
-        headline4: textThemeLight.headline4,
-        headline5: textThemeLight.headline5,
-        headline6: textThemeLight.headline6,
-        subtitle1: textThemeLight.subtitle1.copyWith(color: colorSchemeLight.baseBlack),
-        subtitle2: textThemeLight.subtitle2.copyWith(color: colorSchemeLight.baseBlack));
+      button: textThemeLight.button.copyWith(color: colorSchemeLight.baseBlack),
+      headline1: textThemeLight.headline1.copyWith(color: colorSchemeLight.baseBlack),
+      headline2: textThemeLight.headline2.copyWith(color: colorSchemeLight.baseBlack),
+      headline3: textThemeLight.headline3.copyWith(color: colorSchemeLight.baseBlack),
+      headline4: textThemeLight.headline4.copyWith(color: colorSchemeLight.baseBlack),
+      headline5: textThemeLight.headline5.copyWith(color: colorSchemeLight.baseBlack),
+      headline6: textThemeLight.headline6.copyWith(color: colorSchemeLight.baseBlack),
+      subtitle1: textThemeLight.subtitle1.copyWith(color: colorSchemeLight.baseBlack),
+      subtitle2: textThemeLight.subtitle2.copyWith(color: colorSchemeLight.baseDarkGrey),
+    );
   }
 }

@@ -1,4 +1,4 @@
-import '../enums/fail_enums.dart';
+import '../enums/validate_fail_enums.dart';
 
 typedef Validator = ValidateFailResult? Function(String?);
 typedef ValidatorString = String? Function(String?);

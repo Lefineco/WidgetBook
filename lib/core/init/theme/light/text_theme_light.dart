@@ -14,16 +14,16 @@ class TextThemeLight {
   final TextStyle headline3 = const TextStyle(fontWeight: FontWeight.w600, fontSize: 48);
   final TextStyle headline4 = const TextStyle(fontWeight: FontWeight.w600, letterSpacing: 0.25, fontSize: 34);
   final TextStyle headline5 = const TextStyle(fontWeight: FontWeight.w600, fontSize: 24);
-  final TextStyle headline6 = const TextStyle(fontWeight: FontWeight.w600, fontSize: 16);
-  final TextStyle subtitle1 = TextStyle(
+  final TextStyle headline6 = const TextStyle(
+    fontWeight: FontWeight.w400,
     fontSize: 16,
-    fontWeight: FontWeight.w400,
-    letterSpacing: 0.15,
   );
+  final TextStyle subtitle1 = TextStyle(fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 0.15);
   final TextStyle subtitle2 = TextStyle(
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: FontWeight.w400,
   );
+  final TextStyle button = TextStyle(fontSize: 16, fontWeight: FontWeight.w600);
 
 /*   
   final subtitle1 = GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 0.15);

@@ -32,24 +32,9 @@ class _BaseFormState extends State<BaseForm> {
                   style: Theme.of(context).textTheme.headline5?.copyWith(color: Colors.black),
                 ),
               ),
-              context.emptySizedHeightBoxNormal,
-              CustomTextFormField(hintText: "0Fatihyildiz"),
               context.emptySizedHeightBoxLow,
-              CustomTextFormField(
-                hintText: "fatih!051166",
-                isObscureText: !_isVisible ? true : false,
-                suffixIcon: InkWell(
-                    onTap: () {
-                      setState(() {
-                        _isVisible = !_isVisible;
-                        print(_isVisible);
-                      });
-                    },
-                    child: Icon(
-                      _isVisible ? Icons.visibility : Icons.visibility_off,
-                      color: Colors.black,
-                    )),
-              ),
+              _buildNameField(),
+              _buildPasswordField(),
               context.emptySizedWidthBoxLow,
               CheckboxListTile(
                 value: _value,
@@ -57,7 +42,7 @@ class _BaseFormState extends State<BaseForm> {
                 controlAffinity: ListTileControlAffinity.leading,
                 title: Text(
                   'Label',
-                  style: Theme.of(context).textTheme.headline6?.copyWith(color: Colors.black, fontWeight: FontWeight.w600),
+                  style: Theme.of(context).textTheme.headline6?.copyWith(fontWeight: FontWeight.w600),
                 ),
                 onChanged: (bool? value) => setState(() => _value = value ?? false),
               ),
@@ -68,17 +53,52 @@ class _BaseFormState extends State<BaseForm> {
                   BaseButton(),
                   Padding(padding: EdgeInsets.symmetric(horizontal: 8.5)),
                   ElevatedButton(
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-                      onPressed: () {},
-                      child: Text(
-                        'Cancel',
-                      ))
+                    style: ElevatedButton.styleFrom().copyWith(
+                      elevation: MaterialStatePropertyAll(0),
+                      side: MaterialStatePropertyAll(BorderSide(color: Color(0xffECECEC), width: 1)),
+                      minimumSize: MaterialStatePropertyAll(Size(context.dynamicWidth(.0700), context.dynamicHeight(.01000))),
+                      backgroundColor: MaterialStatePropertyAll(Colors.white),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'Cancel',
+                      style: Theme.of(context).textTheme.headline6?.copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
+                  )
                 ],
               )
             ],
           ),
         ),
       ),
+    );
+  }
+
+  CustomTextFormField _buildPasswordField() {
+    return CustomTextFormField(
+      maxLines: 1,
+      hintText: "fatih!051166",
+      isObscureText: !_isVisible ? true : false,
+      suffixIcon: InkWell(
+          onTap: () {
+            setState(() {
+              _isVisible = !_isVisible;
+              print(_isVisible);
+            });
+          },
+          child: Icon(
+            _isVisible ? Icons.visibility : Icons.visibility_off,
+            color: Colors.black,
+          )),
+    );
+  }
+
+  CustomTextFormField _buildNameField() {
+    return CustomTextFormField(
+      hintText: "0Fatihyildiz",
+      maxLines: 1,
     );
   }
 }

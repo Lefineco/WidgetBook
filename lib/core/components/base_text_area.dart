@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'custom_text_form_field.dart';
+
 class BaseTextArea extends StatelessWidget {
   const BaseTextArea({super.key});
 
@@ -7,15 +9,12 @@ class BaseTextArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Form(
-        child: TextFormField(
-          decoration: InputDecoration(
-            labelText: "Label",
-            hintText: "Content",
-            helperText: "Help Text",
-          ),
-          minLines: 6, // any number you need (It works as the rows for the textarea)
+        child: CustomTextFormField(
+          labelText: "Label",
+          hintText: "Content",
+          helperText: "Help Text",
+          minLines: 9, // any number you need (It works as the rows for the textarea)
           keyboardType: TextInputType.multiline,
-          maxLines: null,
         ),
       ),
     );

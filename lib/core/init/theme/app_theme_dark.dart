@@ -37,7 +37,7 @@ class AppThemeDark extends AppTheme with IDarkTheme {
           borderRadius: BorderRadius.circular(10),
         ),
       ),
-      elevatedButtonTheme: elevatedButton(),
+      elevatedButtonTheme: elevatedButtonTheme(),
       iconTheme: _iconThemeData(),
       checkboxTheme: CheckboxThemeData(
         checkColor: MaterialStatePropertyAll(colorSchemeDark.baseWhite),
@@ -47,10 +47,12 @@ class AppThemeDark extends AppTheme with IDarkTheme {
 
   IconThemeData _iconThemeData() => IconThemeData(color: colorSchemeDark.baseWhite);
 
-  ElevatedButtonThemeData elevatedButton() {
+  ElevatedButtonThemeData elevatedButtonTheme() {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
+        splashFactory: InkRipple.splashFactory,
         backgroundColor: colorSchemeDark.baseBlack,
+        foregroundColor: colorSchemeDark.baseTransparentColor,
         textStyle: textThemeDark.headline6,
         padding: const EdgeInsets.only(bottom: 20, left: 25, right: 20, top: 25),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -63,14 +65,15 @@ class AppThemeDark extends AppTheme with IDarkTheme {
 
   TextTheme textTheme() {
     return TextTheme(
+      button: textThemeDark.button,
       headline1: textThemeDark.headline1,
       headline2: textThemeDark.headline2,
       headline3: textThemeDark.headline3,
       headline4: textThemeDark.headline4,
       headline5: textThemeDark.headline5,
+      headline6: textThemeDark.headline6.copyWith(color: Colors.black),
       subtitle2: textThemeDark.subtitle2.copyWith(color: Colors.white),
       subtitle1: textThemeDark.subtitle1.copyWith(color: Colors.white),
-      headline6: textThemeDark.headline6,
     );
   }
 }
