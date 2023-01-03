@@ -23,7 +23,10 @@ dependencies:
   responsive_builder: ^0.4.3
   # LOCALIZATION
   easy_localization: ^3.0.0
+  # ANALYZER
   very_good_analysis: ^3.1.0
+  # ANIMATIONS
+  rive: ^0.10.0
 
 flutter_gen:
   output: lib/gen/ # Optional (default: lib/gen/)
@@ -33,7 +36,7 @@ flutter_gen:
   integrations:
     flutter_svg: true
     flare_flutter: true
-    rive: false
+    rive: true
     lottie: true
 
 dev_dependencies:
