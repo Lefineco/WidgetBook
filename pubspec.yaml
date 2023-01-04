@@ -27,6 +27,7 @@ dependencies:
   very_good_analysis: ^3.1.0
   # ANIMATIONS
   rive: ^0.10.0
+  tailwind_colors: ^0.3.1
 
 flutter_gen:
   output: lib/gen/ # Optional (default: lib/gen/)

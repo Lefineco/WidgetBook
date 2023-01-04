@@ -2,14 +2,8 @@
 /// *****************************************************
 ///  FlutterGen
 /// *****************************************************
-
-// coverage:ignore-file
-// ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
-
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
@@ -22,8 +16,7 @@ class $AssetsImagesPngGen {
   const $AssetsImagesPngGen();
 
   /// File path: assets/images/png/batman.png
-  AssetGenImage get batman =>
-      const AssetGenImage('assets/images/png/batman.png');
+  AssetGenImage get batman => const AssetGenImage('assets/images/png/batman.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [batman];
@@ -42,19 +35,16 @@ class $AssetsImagesSvgGen {
   SvgGenImage get icPlus => const SvgGenImage('assets/images/svg/ic_plus.svg');
 
   /// File path: assets/images/svg/ic_profile.svg
-  SvgGenImage get icProfile =>
-      const SvgGenImage('assets/images/svg/ic_profile.svg');
+  SvgGenImage get icProfile => const SvgGenImage('assets/images/svg/ic_profile.svg');
 
   /// File path: assets/images/svg/ic_right_arrow.svg
-  SvgGenImage get icRightArrow =>
-      const SvgGenImage('assets/images/svg/ic_right_arrow.svg');
+  SvgGenImage get icRightArrow => const SvgGenImage('assets/images/svg/ic_right_arrow.svg');
 
   /// File path: assets/images/svg/ic_tick.svg
   SvgGenImage get icTick => const SvgGenImage('assets/images/svg/ic_tick.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [icEye, icMail, icPlus, icProfile, icRightArrow, icTick];
+  List<SvgGenImage> get values => [icEye, icMail, icPlus, icProfile, icRightArrow, icTick];
 }
 
 class Assets {

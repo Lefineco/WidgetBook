@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
-import 'base_elevated_button.dart';
+import '../../product/widgets/icon/secure_icon.dart';
+import 'base_elevated_icon_button.dart';
 import 'custom_text_form_field.dart';
 
 class BaseForm extends StatefulWidget {
@@ -50,7 +52,11 @@ class _BaseFormState extends State<BaseForm> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  BaseButton(),
+                  BaseElevatedIconButton(
+                    icon: CupertinoIcons.add,
+                    onTap: () async {},
+                    title: "Base",
+                  ),
                   Padding(padding: EdgeInsets.symmetric(horizontal: 8.5)),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom().copyWith(
@@ -88,9 +94,8 @@ class _BaseFormState extends State<BaseForm> {
               print(_isVisible);
             });
           },
-          child: Icon(
-            _isVisible ? Icons.visibility : Icons.visibility_off,
-            color: Colors.black,
+          child: VisibilityIcon(
+            isSecure: _isVisible,
           )),
     );
   }

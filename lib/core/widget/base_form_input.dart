@@ -11,6 +11,11 @@ class BaseFormInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: CustomTextFormField(labelText: label, hintText: hintText, helperText: helperText));
+    return Center(
+        child: CustomTextFormField(
+      labelText: label,
+      hintText: hintText,
+      helperText: helperText,
+    ));
   }
 }

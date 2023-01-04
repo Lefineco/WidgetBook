@@ -9,7 +9,7 @@ class BaseChip extends StatelessWidget {
       child: Chip(
         label: Text(
           'Label',
-          style: Theme.of(context).textTheme.subtitle2?.copyWith(color: Colors.white),
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),
         ),
       ),
     );

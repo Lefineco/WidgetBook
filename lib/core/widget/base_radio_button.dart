@@ -16,10 +16,10 @@ class _BaseRadioButtonState extends State<BaseRadioButton> {
         toggleable: true,
         value: _radioValue,
         groupValue: false,
-        title: Text(
-          'Lorem ipsum dolor sit amet',
-          style: Theme.of(context).textTheme.headline6?.copyWith(color: Colors.black),
-        ),
+        title: Text('Lorem ipsum dolor sit amet',
+            style: _radioValue
+                ? Theme.of(context).textTheme.headline6?.copyWith(color: Colors.black, fontSize: 16)
+                : Theme.of(context).textTheme.headline6?.copyWith(color: Colors.black, fontWeight: FontWeight.w600, fontSize: 16)),
         onChanged: (value) {
           setState(() {
             value = _radioValue = !_radioValue;
