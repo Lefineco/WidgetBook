@@ -1,6 +1,6 @@
 {
-    "name": "lefine_project",
-    "short_name": "lefine_project",
+    "name": "Lefine",
+    "short_name": "Lefine",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
