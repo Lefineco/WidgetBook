@@ -64,5 +64,6 @@ flutter:
         - asset: assets/fonts/Manrope-ExtraLight.ttf
         - asset: assets/fonts/Manrope-Light.ttf
         - asset: assets/fonts/Manrope-Medium.ttf
-        - asset: assets/fonts/Manrope-Regular.ttf
         - asset: assets/fonts/Manrope-SemiBold.ttf
+        - asset: assets/fonts/Manrope-Bold.ttf
+          weight: 600

@@ -3,14 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
 import '../../product/widgets/icon/secure_icon.dart';
+import '../type_def.dart';
 import 'base_elevated_icon_button.dart';
 import 'custom_text_form_field.dart';
 
 class BaseForm extends StatefulWidget {
-  const BaseForm({super.key});
+  const BaseForm({super.key, required this.onTap});
 
   @override
   State<BaseForm> createState() => _BaseFormState();
+
+  final FutureCallBack onTap;
 }
 
 class _BaseFormState extends State<BaseForm> {
@@ -53,16 +56,17 @@ class _BaseFormState extends State<BaseForm> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   BaseElevatedIconButton(
+                    minimumSize: Size(context.dynamicWidth(.1), context.dynamicHeight(.01000)),
                     icon: CupertinoIcons.add,
-                    onTap: () async {},
-                    title: "Base",
+                    onTap: widget.onTap,
+                    title: "Login",
                   ),
                   Padding(padding: EdgeInsets.symmetric(horizontal: 8.5)),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom().copyWith(
                       elevation: MaterialStatePropertyAll(0),
                       side: MaterialStatePropertyAll(BorderSide(color: Color(0xffECECEC), width: 1)),
-                      minimumSize: MaterialStatePropertyAll(Size(context.dynamicWidth(.0700), context.dynamicHeight(.01000))),
+                      minimumSize: MaterialStatePropertyAll(Size(context.dynamicWidth(.0775), context.dynamicHeight(.01000))),
                       backgroundColor: MaterialStatePropertyAll(Colors.white),
                     ),
                     onPressed: () {},

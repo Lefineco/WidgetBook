@@ -131,7 +131,9 @@ class _MyAppState extends ConsumerState<MyApp> {
                 ),
                 WidgetbookUseCase(
                   name: 'Base Form',
-                  builder: (context) => const BaseForm(),
+                  builder: (context) => BaseForm(onTap: () {
+                    return promiseToFuture();
+                  }),
                 ),
               ],
             ),
