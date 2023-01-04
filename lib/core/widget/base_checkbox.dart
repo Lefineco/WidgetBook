@@ -3,6 +3,7 @@ import 'package:kartal/kartal.dart';
 
 import '../../gen/assets.gen.dart';
 import '../init/theme/dark/dark_theme_interface.dart';
+import '../type_def.dart';
 
 class BaseCheckBox extends StatefulWidget {
   const BaseCheckBox({
@@ -20,7 +21,7 @@ class BaseCheckBox extends StatefulWidget {
   final Color? color;
   final double? iconSize;
   final Color? checkColor;
-  final VoidCallback Function(bool?)? onChanged;
+  final FunctionCallBack onChanged;
 
   @override
   State<BaseCheckBox> createState() => _BaseCheckBoxState();
