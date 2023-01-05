@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../init/theme/dark/dark_theme_interface.dart';
+import '../../init/theme/dark/dark_theme_interface.dart';
 import 'base_checkbox.dart';
 
 class BaseCheckBoxListTile extends StatefulWidget {

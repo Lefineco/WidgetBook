@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_text_form_field.dart';
+import '../custom_text_form_field.dart';
 
 class BaseTextArea extends StatelessWidget {
   const BaseTextArea({super.key});

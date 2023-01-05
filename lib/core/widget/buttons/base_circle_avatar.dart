@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../extension/image_extension.dart';
+import '../../extension/image_extension.dart';
 
 class BaseCircleAvatar extends StatelessWidget {
   const BaseCircleAvatar({super.key});

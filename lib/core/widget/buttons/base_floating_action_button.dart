@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../type_def.dart';
-import 'custom_circular_loading.dart';
+import '../../type_def.dart';
+import '../custom_circular_loading.dart';
 
 class BaseFloatingActionButton extends StatefulWidget {
   const BaseFloatingActionButton({

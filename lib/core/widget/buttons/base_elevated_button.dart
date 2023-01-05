@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../type_def.dart';
-import 'custom_circular_loading.dart';
+import '../../type_def.dart';
+import '../custom_circular_loading.dart';
 
 class BaseElevatedButton extends StatefulWidget {
   BaseElevatedButton({super.key, required this.onTap, required this.title, this.minimumSize = const Size(144, 56)});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_text_form_field.dart';
+import '../custom_text_form_field.dart';
 
 class BaseFormInput extends StatelessWidget {
   const BaseFormInput({super.key, required this.label, this.hintText = "Content", this.helperText = "Help Text"});

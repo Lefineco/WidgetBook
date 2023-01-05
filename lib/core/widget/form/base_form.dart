@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
-import '../../product/widgets/icon/secure_icon.dart';
-import '../type_def.dart';
-import 'base_checkbox_list_tile.dart';
-import 'base_elevated_icon_button.dart';
-import 'custom_text_form_field.dart';
+import '../../../product/widgets/icon/secure_icon.dart';
+import '../../type_def.dart';
+import '../buttons/base_checkbox_list_tile.dart';
+import '../buttons/base_elevated_icon_button.dart';
+import '../custom_text_form_field.dart';
 
 class BaseForm extends StatefulWidget {
   const BaseForm({super.key, required this.onTap});

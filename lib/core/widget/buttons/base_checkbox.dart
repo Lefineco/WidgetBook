@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
-import '../../gen/assets.gen.dart';
-import '../init/theme/dark/dark_theme_interface.dart';
-import '../type_def.dart';
+import '../../../gen/assets.gen.dart';
+import '../../init/theme/dark/dark_theme_interface.dart';
+import '../../type_def.dart';
 
 class BaseCheckBox extends StatefulWidget {
   const BaseCheckBox({
