@@ -10,6 +10,7 @@ class CustomTextFormField extends StatelessWidget {
     TextInputType? keyboardType,
     int? minLines,
     int? maxLines: null,
+    Widget label = const SizedBox(),
     String? labelText,
     bool isObscureText = false,
     bool readOnly = false,
@@ -33,6 +34,7 @@ class CustomTextFormField extends StatelessWidget {
         _readOnly = readOnly,
         _enableInteractiveSelection = enableInteractiveSelection,
         _enabled = enabled,
+        _label = label,
         super(key: key);
 
   final TextEditingController? _controller;
@@ -52,6 +54,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool _readOnly;
   final bool _enableInteractiveSelection;
   final bool _enabled;
+  final Widget _label;
 
   @override
   Widget build(BuildContext context) {
@@ -59,12 +62,12 @@ class CustomTextFormField extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        _label,
+        /* Text(
           _labelText ?? '',
           textAlign: TextAlign.start,
           style: Theme.of(context).textTheme.headline6?.copyWith(fontWeight: FontWeight.w600, fontSize: 16),
-        ),
-        _emptyHeightWidget(),
+        ), */
         TextFormField(
           autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: _controller,
@@ -86,9 +89,5 @@ class CustomTextFormField extends StatelessWidget {
         ),
       ],
     );
-  }
-
-  SizedBox _emptyHeightWidget() {
-    return SizedBox(height: 6);
   }
 }

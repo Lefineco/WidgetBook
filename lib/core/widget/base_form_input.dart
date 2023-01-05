@@ -12,10 +12,21 @@ class BaseFormInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: CustomTextFormField(
-      labelText: label,
-      hintText: hintText,
-      helperText: helperText,
+        child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Label',
+          textAlign: TextAlign.start,
+          style: Theme.of(context).textTheme.headline6?.copyWith(fontWeight: FontWeight.w600, fontSize: 16),
+        ),
+        CustomTextFormField(
+          labelText: label,
+          hintText: hintText,
+          helperText: helperText,
+        ),
+      ],
     ));
   }
 }

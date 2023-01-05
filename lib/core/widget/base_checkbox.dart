@@ -8,8 +8,8 @@ import '../type_def.dart';
 class BaseCheckBox extends StatefulWidget {
   const BaseCheckBox({
     Key? key,
-    this.width = 24.0,
-    this.height = 24.0,
+    this.width = 18.0,
+    this.height = 18.0,
     this.color,
     this.iconSize,
     this.onChanged,
@@ -30,42 +30,41 @@ class BaseCheckBox extends StatefulWidget {
 class _BaseCheckBoxState extends State<BaseCheckBox> with IDarkTheme {
   bool _isChecked = false;
 
+  void _changeTick() {
+    setState(() => _isChecked = !_isChecked);
+    widget.onChanged?.call(_isChecked);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: InkWell(
-          overlayColor: MaterialStatePropertyAll(colorSchemeDark.baseTransparentColor),
-          onTap: () {
-            setState(() => _isChecked = !_isChecked);
-            widget.onChanged?.call(_isChecked);
-          },
-          child: _isChecked
-              ? AnimatedContainer(
-                  duration: context.durationLow,
-                  width: widget.width,
-                  height: widget.height,
-                  curve: Curves.decelerate,
-                  decoration: BoxDecoration(
-                    color: colorSchemeDark.baseBlack,
-                    borderRadius: BorderRadius.circular(6.0),
+    return InkWell(
+        overlayColor: MaterialStatePropertyAll(colorSchemeDark.baseTransparentColor),
+        onTap: () => _changeTick(),
+        child: _isChecked
+            ? AnimatedContainer(
+                duration: context.durationLow,
+                width: widget.width,
+                height: widget.height,
+                decoration: BoxDecoration(
+                  color: colorSchemeDark.baseBlack,
+                  borderRadius: BorderRadius.circular(3.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(2),
+                  child: Assets.images.svg.icTick.svg(height: 6.5, width: 9, color: Colors.white),
+                ),
+              )
+            : AnimatedContainer(
+                duration: context.durationLow,
+                width: widget.width,
+                height: widget.height,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: widget.color ?? colorSchemeDark.baseDarkGrey,
+                    width: 2.0,
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Assets.images.svg.icTick.svg(height: 5, width: 5, color: Colors.white),
-                  ),
-                )
-              : AnimatedContainer(
-                  duration: context.durationLow,
-                  width: widget.width,
-                  height: widget.height,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: widget.color ?? colorSchemeDark.baseDarkGrey,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(6.0),
-                  ),
-                )),
-    );
+                  borderRadius: BorderRadius.circular(3.0),
+                ),
+              ));
   }
 }

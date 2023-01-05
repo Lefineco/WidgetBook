@@ -9,6 +9,7 @@ import 'core/init/notifier/provider_list.dart';
 import 'core/init/theme/app_theme_dark.dart';
 import 'core/init/theme/app_theme_light.dart';
 import 'core/widget/base_checkbox.dart';
+import 'core/widget/base_checkbox_list_tile.dart';
 import 'core/widget/base_chip.dart';
 import 'core/widget/base_circle_avatar.dart';
 import 'core/widget/base_elevated_button.dart';
@@ -54,7 +55,7 @@ class _MyAppState extends ConsumerState<MyApp> {
           name: 'Components',
           widgets: [
             WidgetbookComponent(
-              name: 'Button',
+              name: 'Buttons',
               useCases: [
                 WidgetbookUseCase(
                     name: 'Elevated Icon Button',
@@ -85,8 +86,18 @@ class _MyAppState extends ConsumerState<MyApp> {
                   ),
                 ),
                 WidgetbookUseCase(
-                  name: 'Check box list tile',
-                  builder: (context) => const BaseCheckBox(),
+                  name: 'Checkbox',
+                  builder: (context) => Center(child: const BaseCheckBox()),
+                ),
+                WidgetbookUseCase(
+                  name: 'Checkbox ListTile',
+                  builder: (context) => Center(
+                      child: Padding(
+                    padding: context.horizontalPaddingNormal,
+                    child: BaseCheckBoxListTile(
+                      title: "Label",
+                    ),
+                  )),
                 ),
                 WidgetbookUseCase(
                   name: 'Radio Button',
@@ -110,15 +121,6 @@ class _MyAppState extends ConsumerState<MyApp> {
                   builder: (context) => BaseChip(),
                 ),
                 WidgetbookUseCase(
-                  name: 'Text Input',
-                  builder: (context) => Padding(
-                    padding: context.horizontalPaddingNormal,
-                    child: BaseFormInput(
-                      label: 'label',
-                    ),
-                  ),
-                ),
-                WidgetbookUseCase(
                   name: 'Circle Avatar',
                   builder: (context) => const BaseCircleAvatar(),
                 ),
@@ -129,6 +131,11 @@ class _MyAppState extends ConsumerState<MyApp> {
                     child: const BaseTextArea(),
                   ),
                 ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: "Form",
+              useCases: [
                 WidgetbookUseCase(
                   name: 'Base Form',
                   builder: (context) => BaseForm(onTap: () {
@@ -137,6 +144,20 @@ class _MyAppState extends ConsumerState<MyApp> {
                 ),
               ],
             ),
+            WidgetbookComponent(
+              name: "Text Inputs",
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Text Input',
+                  builder: (context) => Padding(
+                    padding: context.horizontalPaddingNormal,
+                    child: BaseFormInput(
+                      label: 'label',
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ],

@@ -4,6 +4,7 @@ import 'package:kartal/kartal.dart';
 
 import '../../product/widgets/icon/secure_icon.dart';
 import '../type_def.dart';
+import 'base_checkbox_list_tile.dart';
 import 'base_elevated_icon_button.dart';
 import 'custom_text_form_field.dart';
 
@@ -18,7 +19,6 @@ class BaseForm extends StatefulWidget {
 
 class _BaseFormState extends State<BaseForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  bool _value = false;
   bool _isVisible = false;
   @override
   Widget build(BuildContext context) {
@@ -39,21 +39,13 @@ class _BaseFormState extends State<BaseForm> {
               ),
               context.emptySizedHeightBoxLow,
               _buildNameField(),
+              _emptySizedBoxHeight(),
               _buildPasswordField(),
               context.emptySizedWidthBoxLow,
-              CheckboxListTile(
-                value: _value,
-                contentPadding: EdgeInsets.zero,
-                controlAffinity: ListTileControlAffinity.leading,
-                title: Text(
-                  'Label',
-                  style: Theme.of(context).textTheme.headline6?.copyWith(fontWeight: FontWeight.w600),
-                ),
-                onChanged: (bool? value) => setState(() => _value = value ?? false),
-              ),
+              BaseCheckBoxListTile(title: "Label"),
               context.emptySizedWidthBoxLow3x,
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   BaseElevatedIconButton(
                     minimumSize: Size(context.dynamicWidth(.1), context.dynamicHeight(.01000)),
@@ -72,9 +64,7 @@ class _BaseFormState extends State<BaseForm> {
                     onPressed: () {},
                     child: Text(
                       'Cancel',
-                      style: Theme.of(context).textTheme.headline6?.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
+                      style: Theme.of(context).textTheme.headline6?.copyWith(fontWeight: FontWeight.w600, fontSize: 16),
                     ),
                   )
                 ],
@@ -85,6 +75,10 @@ class _BaseFormState extends State<BaseForm> {
       ),
     );
   }
+
+  SizedBox _emptySizedBoxHeight() => SizedBox(
+        height: 13,
+      );
 
   CustomTextFormField _buildPasswordField() {
     return CustomTextFormField(

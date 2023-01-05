@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:kartal/kartal.dart';
 
-import '../../gen/assets.gen.dart';
 import '../init/theme/dark/dark_theme_interface.dart';
+import 'base_checkbox.dart';
 
 class BaseCheckBoxListTile extends StatefulWidget {
-  const BaseCheckBoxListTile({
-    Key? key,
-    this.width = 24.0,
-    this.height = 24.0,
-    this.color,
-    this.iconSize,
-    this.onChanged,
-    this.checkColor,
-    this.title,
-  }) : super(key: key);
+  const BaseCheckBoxListTile(
+      {Key? key,
+      this.width = 24.0,
+      this.height = 24.0,
+      this.color,
+      this.iconSize,
+      this.onChanged,
+      this.checkColor,
+      required this.title,
+      this.minLeadingWidth = 8})
+      : super(key: key);
 
   final double width;
   final double height;
@@ -22,7 +22,8 @@ class BaseCheckBoxListTile extends StatefulWidget {
   final double? iconSize;
   final Color? checkColor;
   final VoidCallback Function(bool?)? onChanged;
-  final Widget? title;
+  final String title;
+  final double minLeadingWidth;
 
   @override
   State<BaseCheckBoxListTile> createState() => _BaseCheckBoxListTileState();
@@ -33,40 +34,14 @@ class _BaseCheckBoxListTileState extends State<BaseCheckBoxListTile> with IDarkT
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: InkWell(
-          overlayColor: MaterialStatePropertyAll(colorSchemeDark.baseTransparentColor),
-          onTap: () {
-            setState(() => _isChecked = !_isChecked);
-            widget.onChanged?.call(_isChecked);
-          },
-          child: _isChecked
-              ? AnimatedContainer(
-                  duration: context.durationLow,
-                  width: widget.width,
-                  height: widget.height,
-                  curve: Curves.decelerate,
-                  decoration: BoxDecoration(
-                    color: colorSchemeDark.baseBlack,
-                    borderRadius: BorderRadius.circular(6.0),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Assets.images.svg.icTick.svg(height: 5, width: 5, color: Colors.white),
-                  ),
-                )
-              : AnimatedContainer(
-                  duration: context.durationLow,
-                  width: widget.width,
-                  height: widget.height,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: widget.color ?? colorSchemeDark.baseDarkGrey,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(6.0),
-                  ),
-                )),
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      leading: BaseCheckBox(),
+      minLeadingWidth: widget.minLeadingWidth,
+      title: Text(
+        widget.title,
+        style: Theme.of(context).textTheme.headline6?.copyWith(fontWeight: FontWeight.w600),
+      ),
     );
   }
 }
