@@ -1,4 +1,5 @@
 class AssetConstants {
+  AssetConstants._();
   static const String batman = 'assets/images/png/batman.png';
   static const String eye = 'assets/images/svg/ic_eye.svg';
   static const String mail = 'assets/images/svg/ic_mail.svg';

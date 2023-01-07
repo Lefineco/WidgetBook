@@ -15,6 +15,12 @@ class _BaseSwitchState extends State<BaseSwitch> with SingleTickerProviderStateM
   AnimationController? _animationController;
 
   @override
+  void dispose() {
+    _animationController?.dispose();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     super.initState();
     _animationController = AnimationController(vsync: this, duration: Duration(milliseconds: 60));
