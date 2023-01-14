@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lefine_theme/theme/app_theme_dark.dart';
+import 'package:lefine_theme/theme/app_theme_light.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../theme/app_theme_dark.dart';
-import '../theme/app_theme_light.dart';
 
 class ThemeNotifier extends StateNotifier<ThemeData> {
   ThemeMode _mode;

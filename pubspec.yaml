@@ -27,8 +27,13 @@ dependencies:
   very_good_analysis: ^3.1.0
   # ANIMATIONS
   rive: ^0.10.0
+  #COLORS
   tailwind_colors: ^0.3.1
-
+  #UIKIT
+  lefine_theme:
+    git: https://github.com/yurrpt/lefine_theme.git
+  uikit:
+    path: module/uikit
 flutter_gen:
   output: lib/gen/ # Optional (default: lib/gen/)
   line_length: 80 # Optional (default: 80)
@@ -55,15 +60,3 @@ flutter:
   assets:
     - assets/images/png/
     - assets/images/svg/
-
-  fonts:
-    - family: Manrope
-      fonts:
-        - asset: assets/fonts/Manrope-Regular.ttf
-        - asset: assets/fonts/Manrope-ExtraBold.ttf
-        - asset: assets/fonts/Manrope-ExtraLight.ttf
-        - asset: assets/fonts/Manrope-Light.ttf
-        - asset: assets/fonts/Manrope-Medium.ttf
-        - asset: assets/fonts/Manrope-SemiBold.ttf
-        - asset: assets/fonts/Manrope-Bold.ttf
-          weight: 600
